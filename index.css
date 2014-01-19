@@ -16,3 +16,56 @@ background: -ms-linear-gradient(top,  #febf04 21%,#000000 100%); /* IE10+ */
 background: linear-gradient(to bottom,  #febf04 21%,#000000 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#febf04', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
 }
+a
+{
+	background:gold;
+	z-index:9;
+	border-style:solid;
+	border-color:white;
+}
+a:link
+{
+	text-decoration:none;
+}
+img
+{
+	z-index:10;
+}
+#main
+{
+	margin:auto;
+	height: 100%;
+	width: 1000px;
+	background:black;
+	text-align:center;
+	z-index:1;
+}
+
+#body
+{
+	margin:auto;
+	width:980px;
+	text-align:center;
+	background:white;
+	z-index:2;
+}
+#content
+{
+	float:left;
+	width:700px;
+	text-align:center;
+	background-color:inherit;
+	z-index:3;
+}
+#links
+{
+	float:right;
+	width:280px;
+	text-align:center;
+	background-color:inherit;
+	z-index:3;
+}
+#links h3
+{
+	background-color:grey;
+}
