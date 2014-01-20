@@ -104,8 +104,14 @@ a:hover
 }
 #links a
 {
+	color:blue;
+	text-decoration:underline;
 	border-style:none;
 	background:none;
+}
+#links a:hover
+{
+	color:purple;
 }
 @-webkit-keyframes rotating_imagesFadeInOut {
 	0% {
