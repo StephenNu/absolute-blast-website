@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
 	<title>Absolute Blast SandBlasting</title>
 	<script type="text/javascript" src="index.js"></script>
 	<link rel="stylesheet" type="text/css" href="index.css">
@@ -19,6 +20,11 @@
 		}(document, 'script', 'facebook-jssdk'));
 	</script>
 	<script>
+		if (!jQuery.browser.mobile) {
+			jQuery('body').on('click', 'a[href^="tel:"]', function() {
+				jQuery(this).attr('href', jQuery(this).attr('href').replace(/^tel:/, 'callto:'));
+			});
+		}
 		$(document).ready(function() {
 				    $("#navigation a.index").hover(function() {
 					          $("#imagebar img.jobs").toggleClass("transparent");
@@ -77,12 +83,12 @@
 			<a class="spec_restoration" href="specialized-restoration.html">Specialized Restoration</a>
 			<a class="contact" href="contact.html">Contact</a>
 			<div id="imagebar">
-				<img class="jobs" src="01.jpg" width="980" height="100" />
-				<img class="restoration" src="02.jpg" width="980" height="100" />
-				<img class="graffiti" src="03.jpg" width="980" height="100" />
-				<img class="spec_restoration" src="04.jpg" width="980" height="100" />
-				<img class="contact" src="05.jpg" width="980" height="100" />
-				<img class="index" src="00.jpg" width="980" height="100" />
+				<img class="jobs" src="01.jpg" width="980" height="100" alt="latest sandblasting jobs" />
+				<img class="restoration" src="02.jpg" width="980" height="100" alt="restoration of buildings" />
+				<img class="graffiti" src="03.jpg" width="980" height="100" alt="graffiti removal" />
+				<img class="spec_restoration" src="04.jpg" width="980" height="100" alt="specialized restoration" />
+				<img class="contact" src="05.jpg" width="980" height="100" alt="contact us" />
+				<img class="index" src="00.jpg" width="980" height="100" alt="return to homepage" />
 			</div>
 		</div>
 		<div id="body">
@@ -90,30 +96,35 @@
 				<h2>Welcome to Absolute Blast Mobile SandBlasting!</h2>
 				<hr />
 				<p>
-					Sandblasting is probably the dirtiest and most dangerous occupation in the renovation; restoration trades only out done by explosive demolition work.
-					The dangers of the work and the danger of damaging projects is not to be taken lightly and is certainly not something to be considered by amateurs.
-					To sandblast properly is a skill that takes time to learn and is only taught on site by other experienced sandblasters.
-					It is very much a one on one teaching method.
-					Absolute Blast has trained its team in the art of cleaning and all the safety aspects needed in mobile sandblasting for the last seven years and is proud of the effort and proud of the young men who have achieved the proficiency that is required in the mobile sandblasting field.
+					<b>Sandblasting is probably the dirtiest and most dangerous occupation</b> in the renovation; restoration trades.
+					The dangers of the work and the danger of damaging sensitive projects is not to be taken lightly and is certainly not something to be considered by amateurs.
+					Absolute Blast has trained its team in the art of cleaning and all the safety aspects needed in mobile sandblasting for the last seven years and is proud of the effort and proud of the young men who have achieved the proficiency that is required in the sandblasting field.
+					This is especially important when our mobile blast work takes us into heritage restoration work where delicate substrates as in soft brick cleaning have to be considered as in fire restoration or mould removal.
 				</p>
 				
 				<p>
-					This is especially important when our mobile blast work takes us into heritage restoration work where delicate substrates as in soft brick cleaning have to be considered as in fire restoration or mould removal.
-					Being part of the Heritage Facade Restoration Guild has put our team in a standard of their own.
+					<b>Being part of the Heritage Facade Restoration Guild</b> has put our team in a standard of their own.
 					There are constant improvements in training and equipment as the heritage restoration field sees new and better methods being introduced.
-					The Rotec Systems (AKA as the JOS System) are now coming to the fore in the Southern Ontario area as architects and heritage groups see the wisdom of having qualified people clean their projects.
+					The Rotec Systems (AKA as the JOS System) are now coming to the fore in the area as architects and heritage groups see the wisdom of having qualified people clean their projects.
+					Plus the expertise in handling interior blasting with temporary blast houses and negative air pressure systems etc.
+					is just part of the ABSOLUTE BLAST CORP. offerings to our customers.
 				</p>
 
 				<p>
-					All this from graffiti removal, monument restoration to heavy equipment cleaning using soda, soft media, walnut, dry ice, wet blasting plus power washing and with a painting crew to deal with what ever you need ABSOLUTE BLAST CO. is Southern Ontario's choice in sandblasting and building cleaning contractors, make it yours.
+					<b>From graffiti removal</b> using varied methods, delicate monument restoration to heavy equipment cleaning using hard grit, soda, soft media, walnut, dry ice, wet blasting plus power washing and with a painting crew to deal with what ever you need ABSOLUTE BLAST CO. is Ontario's trusted choice in sandblasting and building cleaning contractors.
 				</p>
+				<p>
+					Serving Southern and Central Ontario, including Toronto, North Bay, Sudbury, Huntsville, Hamilton, Burlington, Kitchener, Waterloo, London, Mississauga, and other neighboring areas. 
+					We are available throughout Ontario and beyond, depending on the project.
+				</p>
+				<p>
+					Please call <a class="mobiles_only" href="tel:+19059717863">905-971-7863</a> or email <a href="mailto:absoluteblastco@gmail.com">absoluteblastco@gmail.com</a> for inquiries.
 			</div>
 			<div id="links">
 				<div id="quotes">
 					<h3>Call Now for a Quote!</h3>
-					Walter Raybould <br />
-					905-971-7863 <br />
-					Or<a href="contact.html">contact us</a>via email!
+					<b><a class="mobiles_only" href="tel:+1905-971-7863">905-971-7863</a></b> <br />
+					Or email us at <a href="mailto:absoluteblastco@gmail.com">absoluteblastco@gmail.com</a>!
 				</div>
 				<div id="social">
 					<h3>Networking</h3>
@@ -124,25 +135,24 @@
 				</div>
 				<div id="partners">
 					<h3>Partners</h3>
-					<a href="http://hfrg.ca/"><img src="hfrg-patch.png" width="150" height="150" /></a>
+					<a href="http://hfrg.ca/"><img src="hfrg-patch.png" width="150" height="150" alt="link to heritage facade restoration guild" /></a>
 				</div>
 				<div id="images">
 					<h3> Check us out! </h3>
 					<div id="rotating_images">
-						<img src="0.jpg" width="250" height="150" />
-						<img src="1.jpg" width="250" height="150" />
-						<img src="2.jpg" width="250" height="150" />
-						<img src="3.jpg" width="250" height="150" />
-						<img src="4.jpg" width="250" height="150" />
-						<img src="5.jpg" width="250" height="150" />
-						<img src="6.jpg" width="250" height="150" />
-						<img src="7.jpg" width="250" height="150" />
-						<img src="8.jpg" width="250" height="150" />
-						<img src="9.jpg" width="250" height="150" />
-						<img src="10.jpg" width="250" height="150" />
-						<img src="11.jpg" width="250" height="150" />
+						<img src="0.jpg" width="250" height="150" alt="graffiti removal" />
+						<img src="1.jpg" width="250" height="150" alt="graffiti removal two" />
+						<img src="2.jpg" width="250" height="150" alt="bell cleaning" />
+						<img src="3.jpg" width="250" height="150" alt="sandblasting truck" />
+						<img src="4.jpg" width="250" height="150" alt="sandblasting crane" />
+						<img src="5.jpg" width="250" height="150" alt="sandblasting bell" />
+						<img src="6.jpg" width="250" height="150" alt="wet blasting" />
+						<img src="7.jpg" width="250" height="150" alt="scaffolding blasting" />
+						<img src="8.jpg" width="250" height="150" alt="swiss chalet" />
+						<img src="9.jpg" width="250" height="150" alt="industry blasting" />
+						<img src="10.jpg" width="250" height="150" alt="sandblasting truck" />
+						<img src="11.jpg" width="250" height="150" alt="undefined" />
 					</div>
-					<!--<img id="rotating_images" src="0.jpg" width="250" height="150" />-->
 				</div>
 			</div>
 			<div id="footer">
