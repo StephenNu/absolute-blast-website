@@ -4,6 +4,7 @@
 	<title>Absolute Blast SandBlasting</title>
 	<script type="text/javascript" src="index.js"></script>
 	<link rel="stylesheet" type="text/css" href="index.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 </head>
 <body>
 	<div id="fb-root"></div>
@@ -16,15 +17,72 @@
 			fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
 	</script>
+	<script>
+		$(document).ready(function() {
+				    $("#navigation a.index").hover(function() {
+					          $("#imagebar img.jobs").toggleClass("transparent");
+					          $("#imagebar img.restoration").toggleClass("transparent");
+					          $("#imagebar img.graffiti").toggleClass("transparent");
+					          $("#imagebar img.spec_restoration").toggleClass("transparent");
+					          $("#imagebar img.contact").toggleClass("transparent");
+						  }); 
+				    $("#navigation a.jobs").hover(function() {
+					          $("#imagebar img.index").toggleClass("transparent");
+					          $("#imagebar img.restoration").toggleClass("transparent");
+					          $("#imagebar img.graffiti").toggleClass("transparent");
+					          $("#imagebar img.spec_restoration").toggleClass("transparent");
+					          $("#imagebar img.contact").toggleClass("transparent");
+						  }); 
+				    $("#navigation a.restoration").hover(function() {
+					          $("#imagebar img.index").toggleClass("transparent");
+					          $("#imagebar img.jobs").toggleClass("transparent");
+					          $("#imagebar img.graffiti").toggleClass("transparent");
+					          $("#imagebar img.spec_restoration").toggleClass("transparent");
+					          $("#imagebar img.contact").toggleClass("transparent");
+						  });
+				    $("#navigation a.graffiti").hover(function() {
+					          $("#imagebar img.index").toggleClass("transparent");
+					          $("#imagebar img.jobs").toggleClass("transparent");
+					          $("#imagebar img.restoration").toggleClass("transparent");
+					          $("#imagebar img.spec_restoration").toggleClass("transparent");
+					          $("#imagebar img.contact").toggleClass("transparent");
+						  });
+
+				    $("#navigation a.spec_restoration").hover(function() {
+					          $("#imagebar img.index").toggleClass("transparent");
+					          $("#imagebar img.restoration").toggleClass("transparent");
+					          $("#imagebar img.graffiti").toggleClass("transparent");
+					          $("#imagebar img.jobs").toggleClass("transparent");
+					          $("#imagebar img.contact").toggleClass("transparent");
+						  });
+
+				    $("#navigation a.contact").hover(function() {
+					          $("#imagebar img.index").toggleClass("transparent");
+					          $("#imagebar img.restoration").toggleClass("transparent");
+					          $("#imagebar img.graffiti").toggleClass("transparent");
+					          $("#imagebar img.spec_restoration").toggleClass("transparent");
+					          $("#imagebar img.jobs").toggleClass("transparent");
+						  });
+
+				    });
+
+	</script>
 	<div id="main">
 		<div id="navigation">
-			<a href="index.html" onmouseover="change_image('imagebar', '00.jpg');" >Home</a>
-			<a href="latest-jobs.html" onmouseover="change_image('imagebar', '01.jpg');">Latest Jobs</a>
-			<a href="building-restoration.html" onmouseover="change_image('imagebar', '02.jpg');">Building Restoration</a>
-			<a href="graffiti-guard.html" onmouseover="change_image('imagebar', '03.jpg');">Graffiti Guard</a>
-			<a href="specialized-restoration.html" onmouseover="change_image('imagebar', '04.jpg');">Specialized Restoration</a>
-			<a href="contact.html" onmouseover="change_image('imagebar', '05.jpg');">Contact</a>
-			<img id="imagebar" src="00.jpg" width="980" height="100" />
+			<a class="index" id=index href="index.html">Home</a>
+			<a class="jobs" href="latest-jobs.html">Latest Jobs</a>
+			<a class="restoration" href="building-restoration.html">Building Restoration</a>
+			<a class="graffiti" href="graffiti-guard.html">Graffiti Guard</a>
+			<a class="spec_restoration" href="specialized-restoration.html">Specialized Restoration</a>
+			<a class="contact" href="contact.html">Contact</a>
+			<div id="imagebar">
+				<img class="jobs" src="01.jpg" width="980" height="100" />
+				<img class="restoration" src="02.jpg" width="980" height="100" />
+				<img class="graffiti" src="03.jpg" width="980" height="100" />
+				<img class="spec_restoration" src="04.jpg" width="980" height="100" />
+				<img class="contact" src="05.jpg" width="980" height="100" />
+				<img class="index" src="00.jpg" width="980" height="100" />
+			</div>
 		</div>
 		<div id="body">
 			<div id="content">
@@ -66,7 +124,21 @@
 				</div>
 				<div id="images">
 					<h3> Check us out! </h3>
-					<img src="100.jpg" width="250" height="150" />
+					<div id="rotating_images">
+						<img src="0.jpg" width="250" height="150" />
+						<img src="1.jpg" width="250" height="150" />
+						<img src="2.jpg" width="250" height="150" />
+						<img src="3.jpg" width="250" height="150" />
+						<img src="4.jpg" width="250" height="150" />
+						<img src="5.jpg" width="250" height="150" />
+						<img src="6.jpg" width="250" height="150" />
+						<img src="7.jpg" width="250" height="150" />
+						<img src="8.jpg" width="250" height="150" />
+						<img src="9.jpg" width="250" height="150" />
+						<img src="10.jpg" width="250" height="150" />
+						<img src="11.jpg" width="250" height="150" />
+					</div>
+					<!--<img id="rotating_images" src="0.jpg" width="250" height="150" />-->
 				</div>
 			</div>
 			<div id="footer">
