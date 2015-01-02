@@ -3,44 +3,44 @@ html {
 }
 body
 {
-height: 100%;
-margin: 0;
-background-attachment: fixed;
-background-repeat: no-repeat;
-background: #febf04; /* Old browsers */
-background: -moz-linear-gradient(top,  #febf04 21%, #000000 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(21%,#febf04), color-stop(100%,#000000)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  #febf04 21%,#000000 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  #febf04 21%,#000000 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  #febf04 21%,#000000 100%); /* IE10+ */
-background: linear-gradient(to bottom,  #febf04 21%,#000000 100%); /* W3C */
+  font-family: 'Open Sans', sans-serif;
+  height: 100%;
+  margin: 0;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background: #febf04; /* Old browsers */
+  background: -moz-linear-gradient(top,  #febf04 21%, #000000 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(11%,#febf04), color-stop(61%,#000000), color-stop(100%,#febf04)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #febf04 21%, #000000 61%, #febf04 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #febf04 21%,#000000 61%, #febf04 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #febf04 21%,#000000 61%, #febf04 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #febf04 21%,#000000 61%, #febf04 100%); /* W3C */
 /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#febf04', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
 }
-a
+/*#navigation a
 {
-	color:black;
-	padding:5px;
-	background:gold;
+	color:white;
+	padding-left:5px;
+	padding-right:5px;
 	z-index:9;
-	border-style:solid;
-	border-color:grey;
 }
-a:link
+#navigation a:link
 {
 	text-decoration:none;
 }
-a:visited
+#navigation a:visited
 {
 	text-decoration:none;
 }
-a:hover
+#navigation a:hover
 {
-	background-color:white;
-}
+  color:black;
+	background-color:#E6B800;
+}*/
 #imagebar
 {
 	position:relative;
-	height:100px;
+	height:200px;
 	width:980px;
 	margin:0 auto;
 }
@@ -61,15 +61,20 @@ a:hover
 #main
 {
 	margin:auto;
-	height: 100%;
 	width: 1000px;
 	background:black;
 	text-align:center;
 	z-index:1;
+  padding-bottom:30px;
+  color:white;
+  font-size:10px;
 }
 
 #body
 {
+  display: flex;
+  color:black;
+  font-size:16px;
 	margin:auto;
 	width:980px;
 	text-align:center;
@@ -88,7 +93,7 @@ a:hover
 	border-color:grey;
 	padding:5px;
 	float:left;
-	width:670px;
+	width:700px;
 	text-align:center;
 	background-color:inherit;
 	z-index:3;
@@ -123,177 +128,6 @@ a:hover
 {
 	color:purple;
 }
-@-webkit-keyframes rotating_imagesFadeInOut {
-	0% {
-		opacity:1;
-	}
-	7% {
-		opacity:1;
-	}
-	8% {
-		opacity:0;
-	}
-	98% {
-		opacity:0;
-	}
-	100% {
-		opacity:1;
-	}
-}
-@-moz-keyframes rotating_imagesFadeInOut {
-	0% {
-		opacity:1;
-	}
-	7% {
-		opacity:1;
-	}
-	8% {
-		opacity:0;
-	}
-	98% {
-		opacity:0;
-	}
-	100% {
-		opacity:1;
-	}
-}
-@-o-keyframes rotating_imagesFadeInOut {
-	0% {
-		opacity:1;
-	}
-	7% {
-		opacity:1;
-	}
-	8% {
-		opacity:0;
-	}
-	98% {
-		opacity:0;
-	}
-	100% {
-		opacity:1;
-	}
-}
-@keyframes rotating_imagesFadeInOut {
-	0% {
-		opacity:1;
-	}
-	7% {
-		opacity:1;
-	}
-	8% {
-		opacity:0;
-	}
-	98% {
-		opacity:0;
-	}
-	100% {
-		opacity:1;
-	}
-}
-#rotating_images {
-	position:relative;
-	height:150px;
-	width:250px;
-}
-#rotating_images img {
-	position:absolute;
-	left:5%;
-}
-#rotating_images img {
-	-webkit-animation-name: rotating_imagesFadeInOut;
-	-webkit-animation-timing-function: ease-in-out;
-	-webkit-animation-iteration-count: infinite;
-	-webkit-animation-duration: 72s;
-
-	-moz-animation-name: rotating_imagesFadeInOut;
-	-moz-animation-timing-function: ease-in-out;
-	-moz-animation-iteration-count: infinite;
-	-moz-animation-duration: 72s;
-
-	-o-animation-name: rotating_imagesFadeInOut;
-	-o-animation-timing-function: ease-in-out;
-	-o-animation-iteration-count: infinite;
-	-o-animation-duration: 72s;
-
-	animation-name: rotating_imagesFadeInOut;
-	animation-timing-function: ease-in-out;
-	animation-iteration-count: infinite;
-	animation-duration: 72s;
-}  
-#rotating_images img:nth-of-type(1) {
-	-webkit-animation-delay: 66s;
-	-moz-animation-delay: 66s;
-	-o-animation-delay: 66s;
-	animation-delay: 66s;
-} 
-#rotating_images img:nth-of-type(2) {
-	-webkit-animation-delay: 60s;
-	-moz-animation-delay: 60s;
-	-o-animation-delay: 60s;
-	animation-delay: 60s;
-} 
-#rotating_images img:nth-of-type(3) {
-	-webkit-animation-delay: 54s;
-	-moz-animation-delay: 54s;
-	-o-animation-delay: 54s;
-	animation-delay: 54s;
-} 
-#rotating_images img:nth-of-type(4) {
-	-webkit-animation-delay: 48s;
-	-moz-animation-delay: 48s;
-	-o-animation-delay: 48s;
-	animation-delay: 48s;
-} 
-#rotating_images img:nth-of-type(5) {
-	-webkit-animation-delay: 42s;
-	-moz-animation-delay: 42s;
-	-o-animation-delay: 42s;
-	animation-delay: 42s;
-} 
-#rotating_images img:nth-of-type(6) {
-	-webkit-animation-delay: 36s;
-	-moz-animation-delay: 36s;
-	-o-animation-delay: 36s;
-	animation-delay: 36s;
-} 
-#rotating_images img:nth-of-type(7) {
-	-webkit-animation-delay: 30s;
-	-moz-animation-delay: 30s;
-	-o-animation-delay: 30s;
-	animation-delay: 30s;
-} 
-#rotating_images img:nth-of-type(8) {
-	-webkit-animation-delay: 24s;
-	-moz-animation-delay: 24s;
-	-o-animation-delay: 24s;
-	animation-delay: 24s;
-}
-#rotating_images img:nth-of-type(9) {
-	-webkit-animation-delay: 18s;
-	-moz-animation-delay: 18s;
-	-o-animation-delay: 18s;
-	animation-delay: 18s;
-}
-#rotating_images img:nth-of-type(10) {
-	-webkit-animation-delay: 12s;
-	-moz-animation-delay: 12s;
-	-o-animation-delay: 12s;
-	animation-delay: 12s;
-}
-#rotating_images img:nth-of-type(11) {
-	-webkit-animation-delay: 6s;
-	-moz-animation-delay: 6s;
-	-o-animation-delay: 6s;
-	animation-delay: 6s;
-}  
-#rotating_images img:nth-of-type(12) {
-	-webkit-animation-delay:0s;
-	-moz-animation-delay:0s;
-	-o-animation-delay:0s;
-	animation-delay:0s;
-}
-
 #footer
 {
 	clear:both;

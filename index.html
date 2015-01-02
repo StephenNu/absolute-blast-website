@@ -1,163 +1,262 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<title>Absolute Blast SandBlasting</title>
-	<script type="text/javascript" src="js/index.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/index.css">
-	<link rel="shortcut icon" href="images/favicon.png" />
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/detectmobilebrowser.js"></script>
-</head>
-<body>
-	<div id="fb-root"></div>
-	<script>
-		(function(d, s, id) {
-			var js, fjs = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id)) return;
-			js = d.createElement(s); js.id = id;
-			js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
-			fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
-	</script>
-	<script>
-		if (!jQuery.browser.mobile) {
-			jQuery('body').on('click', 'a[href^="tel:"]', function() {
-				jQuery(this).attr('href', jQuery(this).attr('href').replace(/^tel:/, 'callto:'));
-			});
-		}
-		$(document).ready(function() {
-				    $("#navigation a.index").hover(function() {
-					          $("#imagebar img.jobs").toggleClass("transparent");
-					          $("#imagebar img.restoration").toggleClass("transparent");
-					          $("#imagebar img.graffiti").toggleClass("transparent");
-					          $("#imagebar img.spec_restoration").toggleClass("transparent");
-					          $("#imagebar img.contact").toggleClass("transparent");
-						  }); 
-				    $("#navigation a.jobs").hover(function() {
-					          $("#imagebar img.index").toggleClass("transparent");
-					          $("#imagebar img.restoration").toggleClass("transparent");
-					          $("#imagebar img.graffiti").toggleClass("transparent");
-					          $("#imagebar img.spec_restoration").toggleClass("transparent");
-					          $("#imagebar img.contact").toggleClass("transparent");
-						  }); 
-				    $("#navigation a.restoration").hover(function() {
-					          $("#imagebar img.index").toggleClass("transparent");
-					          $("#imagebar img.jobs").toggleClass("transparent");
-					          $("#imagebar img.graffiti").toggleClass("transparent");
-					          $("#imagebar img.spec_restoration").toggleClass("transparent");
-					          $("#imagebar img.contact").toggleClass("transparent");
-						  });
-				    $("#navigation a.graffiti").hover(function() {
-					          $("#imagebar img.index").toggleClass("transparent");
-					          $("#imagebar img.jobs").toggleClass("transparent");
-					          $("#imagebar img.restoration").toggleClass("transparent");
-					          $("#imagebar img.spec_restoration").toggleClass("transparent");
-					          $("#imagebar img.contact").toggleClass("transparent");
-						  });
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-				    $("#navigation a.spec_restoration").hover(function() {
-					          $("#imagebar img.index").toggleClass("transparent");
-					          $("#imagebar img.restoration").toggleClass("transparent");
-					          $("#imagebar img.graffiti").toggleClass("transparent");
-					          $("#imagebar img.jobs").toggleClass("transparent");
-					          $("#imagebar img.contact").toggleClass("transparent");
-						  });
+    <title>Absolute Blast SandBlasting</title>
+    <script type="text/javascript" src="js/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index_rotating_images.css">
+    <link rel="stylesheet" href="css/menu-style.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/gallery-style.css">
+    <link rel="shortcut icon" href="images/favicon.png" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/detectmobilebrowser.js"></script>
+    <script type="text/javascript" src="js/menu-script.js"></script>
+    <!--<script type="text/javascript" src="js/jssor.slider.min.js"></script>-->
+    <script type="text/javascript" src="js/jssor.js"></script>
+    <script type="text/javascript" src="js/jssor.slider.js"></script>
+    <script type="text/javascript" src="js/gallery-script.js"></script>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&appId=654790161272852&version=v2.0";
+          fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <script type="text/javascript">
+      window.twttr = (function (d, s, id) {
+      var t, js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+          js.src= "https://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+              return window.twttr || (t = { _e: [], ready: function (f) { t._e.push(f) } });
+      }(document, "script", "twitter-wjs"));
+    </script>
+    <script>
+if (!jQuery.browser.mobile) {
+  jQuery('body').on('click', 'a[href^="tel:"]', function() {
+    jQuery(this).attr('href', jQuery(this).attr('href').replace(/^tel:/, 'callto:'));
+  });
+}
+$(document).ready(function() {
+  $("#navigation a.index").hover(function() {
+    $("#imagebar img.exterior").toggleClass("transparent");
+    $("#imagebar img.interior").toggleClass("transparent");
+    $("#imagebar img.industrial").toggleClass("transparent");
+    $("#imagebar img.contact").toggleClass("transparent");
+  }); 
+  $("#navigation a.exterior").hover(function() {
+    $("#imagebar img.index").toggleClass("transparent");
+    $("#imagebar img.interior").toggleClass("transparent");
+    $("#imagebar img.industrial").toggleClass("transparent");
+    $("#imagebar img.contact").toggleClass("transparent");
+  }); 
+  $("#navigation a.interior").hover(function() {
+    $("#imagebar img.index").toggleClass("transparent");
+    $("#imagebar img.exterior").toggleClass("transparent");
+    $("#imagebar img.industrial").toggleClass("transparent");
+    $("#imagebar img.contact").toggleClass("transparent");
+  });
+  $("#navigation a.industrial").hover(function() {
+    $("#imagebar img.index").toggleClass("transparent");
+    $("#imagebar img.exterior").toggleClass("transparent");
+    $("#imagebar img.interior").toggleClass("transparent");
+    $("#imagebar img.contact").toggleClass("transparent");
+  });
+  $("#navigation a.contact").hover(function() {
+    $("#imagebar img.index").toggleClass("transparent");
+    $("#imagebar img.interior").toggleClass("transparent");
+    $("#imagebar img.industrial").toggleClass("transparent");
+    $("#imagebar img.exterior").toggleClass("transparent");
+  });
 
-				    $("#navigation a.contact").hover(function() {
-					          $("#imagebar img.index").toggleClass("transparent");
-					          $("#imagebar img.restoration").toggleClass("transparent");
-					          $("#imagebar img.graffiti").toggleClass("transparent");
-					          $("#imagebar img.spec_restoration").toggleClass("transparent");
-					          $("#imagebar img.jobs").toggleClass("transparent");
-						  });
+});
 
-				    });
+    </script>
+    <div id="main">
+      <div id="navigation">
+        <div id='cssmenu'>
+          <ul>
+            <li><a href='#' class="index">Home</a></li>
+            <li class='has-sub'><a href='exteriors.html' class='exterior'>Exteriors</a>
+              <ul>
+                <li><a href='historic-restoration.html' class='exterior'>Historic Restoration</a></li>
+                <li><a href='exterior-cleaning-and-power-washing.html' class='exterior'>Exterior Clearning and Power Washing</a></li>
+              </ul>
+            </li>
+            <li class='has-sub'><a href='interiors.html' class='interior'>Interiors</a>
+              <ul>
+                <li><a href='controlled-interior-blasting.html' class='interior'>Controlled Interior Blasting</a></li>
+                <li><a href='confined-spaces.html' class='interior'>Confined Spaces</a></li>
+              </ul>
+            </li>
+            <li class='has-sub'><a href='industrial.html' class="industrial">Industrial</a>
+              <ul>
+                <li><a href='heavy-equipment.html' class="industrial">Heavy Equipment</a></li>
+                <li><a href='marine-and-riparian.html' class="industrial">Marine and Riparian</a></li>
+              </ul>
+            </li>
+            <li><a href='contact.html' class="contact">Contact</a></li>
+          </ul>
+        </div>
 
-	</script>
-	<div id="main">
-		<div id="navigation">
-			<a class="index" id=index href="index.html">Home</a>
-			<a class="jobs" href="latest-jobs.html">Latest Jobs</a>
-			<a class="restoration" href="building-restoration.html">Building Restoration</a>
-			<a class="graffiti" href="graffiti-guard.html">Graffiti Guard</a>
-			<a class="spec_restoration" href="specialized-restoration.html">Specialized Restoration</a>
-			<a class="contact" href="contact.html">Contact</a>
-			<div id="imagebar">
-				<img class="jobs" src="images/01.jpg" width="980" height="100" alt="latest sandblasting jobs" />
-				<img class="restoration" src="images/02.jpg" width="980" height="100" alt="restoration of buildings" />
-				<img class="graffiti" src="images/03.jpg" width="980" height="100" alt="graffiti removal" />
-				<img class="spec_restoration" src="images/04.jpg" width="980" height="100" alt="specialized restoration" />
-				<img class="contact" src="images/05.jpg" width="980" height="100" alt="contact us" />
-				<img class="index" src="images/00.jpg" width="980" height="100" alt="return to homepage" />
-			</div>
-		</div>
-		<div id="body">
-			<div id="content">
-				<h2>Welcome to Absolute Blast Corp. Sandblasting!</h2>
-				<hr />
-				<p>
-					<b>Sandblasting is probably the dirtiest and most dangerous occupation</b> in the renovation; restoration trades.
-					The dangers of the work and the danger of damaging sensitive projects is not to be taken lightly.
-					ABSOLUTE BLAST CORP. has trained its team in the art of cleaning and all the safety aspects needed in mobile sandblasting and is proud of the young men who have achieved the proficiency that is required in the sandblasting field.
-					This is especially important when our mobile blasting takes us into heritage restoration work where delicate substrates as in soft brick, carved stone and facade patina have to be considered.
-				</p>
-				
-				<p>
-					<b>From heavy equipment cleaning using hard grit</b>, delicate monument restoration to graffiti removal using widely varied specialized methods and using soda, soft media, walnut, dry ice, wet blasting plus power washing and with a painting crew to deal with what ever you need ABSOLUTE BLAST CO. is Ontario's trusted choice in sandblasting.
-				</p>
+        <div id="imagebar">
+          <img class="exterior" src="images/exteriors.jpg" width="980" height="200" alt="latest sandblasting jobs" />
+          <img class="interior" src="images/interiors.jpg" width="980" height="200" alt="restoration of buildings" />
+          <img class="industrial" src="images/heavy-equipment.jpg" width="980" height="200" alt="graffiti removal" />
+          <img class="contact" src="images/contact.jpg" width="980" height="200" alt="contact us" />
+          <img class="index" src="images/home.jpg" width="980" height="200" alt="return to homepage" />
+        </div>
+      </div>
+      <div id="body">
+        <div id="content">
+          <h2>Welcome to Absolute Blast Corp. Sandblasting!</h2>
+          <hr />
+          <p>
+          Serving the commercial, industrial, institutional and the insurance business is Absolute Blast's direction of expertise. 
+          Bonded, experienced and energetic crews give us the edge while honesty, grit and determination see us through.<br />
+          Take a look at some of our pictures which seem so good others use them on their websites !!<br />
+          <br />
+          Then give us a call for your consultation. 
+          North Bay <a href="tel:+17053032702">705-303-2702</a> or<br />Hamilton <a href="tel:+19059717863">905-971-7863</a> 
+          or toll free <a href="tel:+18554448777">1-855-444-8777</a>
+          </p>
+          <!-- start of gallery -->
+          <div class="outer_container">
+          <div id="slider1_container" class="internal_container">
 
-				<p>
-					<b>Being part of the Heritage Facade Restoration Guild</b> has put our team in a standard of their own.
-					There are constant improvements in training and equipment as the heritage restoration field sees new and better methods being introduced.
-					The Rotec Systems (AKA as the JOS System) are now coming to the fore in the area as architects and heritage groups see the wisdom of having qualified people clean their projects.
-					Plus the expertise in handling interior blasting with temporary blast houses and negative air pressure systems etc. is just part of the ABSOLUTE BLAST CORP. offerings to our customers.
-				</p>
-				<p>
-					Serving Southern and Central Ontario, including Toronto, North Bay, Sudbury, Huntsville, Hamilton, Burlington, Kitchener, Waterloo, London, Mississauga, and other neighboring areas. 
-					We are available throughout Ontario and beyond, depending on the project.
-				</p>
-				<p>
-					Please call <a href="tel:+19059717863">905-971-7863</a> or email <a href="mailto:absoluteblastco@gmail.com">absoluteblastco@gmail.com</a> for inquiries.
-			</div>
-			<div id="links">
-				<div id="quotes">
-					<h3>Call Now for a Quote!</h3>
-					<b><a  href="tel:+1905-971-7863">905-971-7863</a></b> <br />
-					Or email us at <a href="mailto:absoluteblastco@gmail.com">absoluteblastco@gmail.com</a>!
-				</div>
-				<div id="social">
-					<h3>Networking</h3>
-					<div class="fb-like" data-href="https://www.facebook.com/pages/Absolute-Blast-Co/165060050192457" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
-					<div id="pdf">
-						<a href="resources/2014_absolute_brochure.pdf" target="_blank">Check out our brochure!</a>
-					</div>
-				</div>
-				<div id="partners">
-					<h3>Partners</h3>
-					<a href="http://hfrg.ca/"><img src="images/hfrg-patch.png" width="150" height="150" alt="link to heritage facade restoration guild" /></a>
-				</div>
-				<div id="images">
-					<h3> Check us out! </h3>
-					<div id="rotating_images">
-						<img src="images/0.jpg" width="250" height="150" alt="graffiti removal" />
-						<img src="images/1.jpg" width="250" height="150" alt="graffiti removal two" />
-						<img src="images/2.jpg" width="250" height="150" alt="bell cleaning" />
-						<img src="images/3.jpg" width="250" height="150" alt="sandblasting truck" />
-						<img src="images/4.jpg" width="250" height="150" alt="sandblasting crane" />
-						<img src="images/5.jpg" width="250" height="150" alt="sandblasting bell" />
-						<img src="images/6.jpg" width="250" height="150" alt="wet blasting" />
-						<img src="images/7.jpg" width="250" height="150" alt="scaffolding blasting" />
-						<img src="images/8.jpg" width="250" height="150" alt="swiss chalet" />
-						<img src="images/9.jpg" width="250" height="150" alt="industry blasting" />
-						<img src="images/10.jpg" width="250" height="150" alt="sandblasting truck" />
-						<img src="images/11.jpg" width="250" height="150" alt="sandblasting team" />
-					</div>
-				</div>
-			</div>
-			<div id="footer">
-			</div>
-		</div>
-	</div>
-</body>
+            <!-- Loading Screen -->
+            <div u="loading" class="loading-screen">
+              <div class="loading-internal-1">
+              </div>
+              <div class="loading-internal-2">
+              </div>
+            </div>
+
+            <!-- Slides Container -->
+            <div u="slides" class="slide-container" >
+              <div>
+                <img u="image" src="images/101a.jpg" />
+                <img u="thumb" src="images/101a.jpg" />
+              </div>
+              <div>
+                <img u="image" src="images/102a.jpg" />
+                <img u="thumb" src="images/102a.jpg" />
+              </div>
+              <div>
+                <img u="image" src="images/103a.jpg" />
+                <img u="thumb" src="images/103a.jpg" />
+              </div>
+              <div>
+                <img u="image" src="images/104a.jpg" />
+                <img u="thumb" src="images/104a.jpg" />
+              </div>
+              <div>
+                <img u="image" src="images/108a.jpg" />
+                <img u="thumb" src="images/108a.jpg" />
+              </div>
+              <div>
+                <img u="image" src="images/109a.jpg" />
+                <img u="thumb" src="images/109a.jpg" />
+              </div>
+            </div>
+            <!-- Arrow Left -->
+            <span u="arrowleft" class="jssora05l">
+            </span>
+            <!-- Arrow Right -->
+            <span u="arrowright" class="jssora05r">
+            </span>
+            <!-- Arrow Navigator Skin End -->
+
+            <!-- Thumbnail Navigator Skin Begin -->
+            <div u="thumbnavigator" class="jssort01">
+              <div u="slides" class="thumb-slides">
+                <div u="prototype" class="p">
+                  <div class='w'>
+                    <div u="thumbnailtemplate" class="template">
+                    </div>
+                  </div>
+                  <div class='c'>
+                  </div>
+                </div>
+              </div>
+              <!-- Thumbnail Item Skin End -->
+            </div>
+            <!-- Thumbnail Navigator Skin End -->
+            <!-- left in for credit -->
+            <a style="display: none" href="http://www.jssor.com"></a>
+          </div>
+          </div>
+          <!-- end of gallery -->
+        </div>
+        <div id="links">
+          <div id="quotes">
+            <h3>Call Now for a Quote!</h3>
+              <table align="center">
+                <tr>
+                  <td align="left">
+                    North Bay:
+                  </td>
+                  <td align="right">
+                    <a href="tel:+17053032702">705-303-2702</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="left">
+              Hamilton:
+                  </td>
+                  <td align="right">
+                    <a href="tel:+19059717863">905-971-7863</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="left">
+              Toll Free:
+                  </td>
+                  <td align="right">
+                    <a href="tel:+18554448777">1-855-444-8777</a>
+                  </td>
+                 </tr>
+               </table>
+            
+            Or email us at <a href="mailto:absoluteblastco@gmail.com">absoluteblastco@gmail.com</a>!
+          </div>
+          <div id="social">
+            <h3>Networking</h3>
+            <div class="fb-like" data-href="https://www.facebook.com/absoluteblastco?fref=ts" data-width="270" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+            <!-- Place this tag where you want the widget to render. -->
+            <div class="g-follow" data-annotation="bubble" data-height="20" data-href="https://plus.google.com/109930806180833437041" data-rel="publisher"></div>
+            <a class="twitter-follow-button"
+                href="https://twitter.com/absoluteblastco"
+                  data-show-count="false"
+                    data-lang="en">
+              Follow @absoluteblastco
+            </a>
+            <div id="pdf">
+              <a href="resources/2014_absolute_brochure.pdf" target="_blank">Check out our brochure!</a>
+            </div>
+          </div>
+          <div id="partners">
+            <h3>Partners</h3>
+            <a href="http://hfrg.ca/"><img src="images/hfrg-patch.png" width="150" height="150" alt="link to heritage facade restoration guild" /></a>
+          </div>
+
+        </div>
+      </div>
+      <br />
+      <div id="footer">
+        Copyright 2014 Absolute Blast inc.
+      </div>
+    </div>
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+  </body>
 </html>
