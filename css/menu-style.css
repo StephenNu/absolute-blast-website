@@ -4,7 +4,6 @@
 #cssmenu ul li,
 #cssmenu ul li a,
 #cssmenu #menu-button {
-  z-index:9999;
   margin: 0;
   padding: 0;
   border: 0;
@@ -39,7 +38,7 @@
   top: 0;
   left: 0;
   height: 3px;
-  background: #009ae1; /* This controls the moving menu bar color */
+  background: #009ae1; /* This controls the moving menu bar colour */
   -webkit-transition: all 0.25s ease-out;
   -moz-transition: all 0.25s ease-out;
   -ms-transition: all 0.25s ease-out;
@@ -71,7 +70,7 @@
   font-size: 12px;
   text-decoration: none;
   text-transform: uppercase;
-  color: #ffffff; /* This controls the menu text color */
+  color: #ffffff; /* This controls the menu text colour */
   -webkit-transition: color .2s ease;
   -moz-transition: color .2s ease;
   -ms-transition: color .2s ease;
@@ -80,8 +79,7 @@
 }
 #cssmenu > ul > li:hover > a,
 #cssmenu > ul > li.active > a {
-  /* This controls the text hover highlighting 
-   * And also the menu items with sub lists */
+/* This controls the text hover highlighting and also the menu items sub lists */
   color: #009ae1; 
 }
 #cssmenu > ul > li.has-sub > a {
@@ -219,12 +217,12 @@
   #cssmenu ul ul li a {
     padding: 20px 20px 20px 30px;
     font-size: 12px;
-    color: #000000;
+    color: #ffffff;
     background: none;
   }
   #cssmenu ul ul li:hover > a,
   #cssmenu ul ul li a:hover {
-    color: #000000;
+    color: #ffffff;
   }
   #cssmenu ul ul ul li a {
     padding-left: 40px;
@@ -276,7 +274,7 @@
   #cssmenu .submenu-button {
     position: absolute;
     z-index: 10;
-    right: 0;
+   right: 0;
     top: 0;
     display: block;
     border-left: 1px solid rgba(120, 120, 120, 0.15);
@@ -310,3 +308,4 @@
     display: none;
   }
 }
+
