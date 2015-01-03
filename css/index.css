@@ -20,6 +20,9 @@ body
 h2 {
 	margin-top:0px;
 }
+#body a:link {
+	text-decoration:none;
+}
 .index {
 
 	position:relative;
@@ -119,7 +122,8 @@ h2 {
   	width:100%;
 	background-color:inherit;
 }
-@media only all and (min-width: 1000px) {
+@media only all and (min-width: 1000px) 
+{
   #main {
 	  width: 100em;
   }
