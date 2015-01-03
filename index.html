@@ -49,6 +49,7 @@ if (!jQuery.browser.mobile) {
   });
 }
 $(document).ready(function() {
+  
   $("#navigation a.index").hover(function() {
     $("#imagebar img.exterior").toggleClass("transparent");
     $("#imagebar img.interior").toggleClass("transparent");
@@ -79,9 +80,13 @@ $(document).ready(function() {
     $("#imagebar img.industrial").toggleClass("transparent");
     $("#imagebar img.exterior").toggleClass("transparent");
   });
-
 });
-
+$(window).load(function() {
+  $("#imagebar img.exterior").css("display", "initial");
+  $("#imagebar img.interior").css("display", "initial");
+  $("#imagebar img.industrial").css("display", "initial");
+  $("#imagebar img.contact").css("display", "initial");
+});
     </script>
     <div id="main">
       <div id="navigation">
