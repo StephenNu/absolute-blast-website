@@ -21,7 +21,7 @@ body
 {
 	position:relative;
 	height:20em;
-	width:98em;
+  width:100%;
 	margin:0 auto;
 }
 #imagebar img
@@ -41,7 +41,7 @@ body
 #main
 {
 	margin:auto;
-	width: 100em;
+  width:100%;
 	background:black;
 	text-align:center;
 	z-index:1;
@@ -52,14 +52,13 @@ body
 
 #body
 {
-  display: flex;
   color:black;
   font-size:16px;
 	margin:auto;
-	width:62.5em;
 	text-align:center;
 	background:white;
 	z-index:2;
+  width:100%;
 }
 #body a
 {
@@ -69,11 +68,7 @@ body
 }
 #content
 {
-	border-style:solid;
-	border-color:grey;
-	padding:0.45em;
-	float:left;
-	width:44.2em;
+  width:100%;
 	text-align:center;
 	background-color:inherit;
 	z-index:3;
@@ -81,10 +76,7 @@ body
 #links
 {
 	padding-bottom:1em;
-	border-style:solid;
-	border-color:grey;
-	float:right;
-	width:17em;
+  width:100%;
 	text-align:center;
 	background-color:inherit;
 	z-index:3;
@@ -111,6 +103,35 @@ body
 #footer
 {
 	clear:both;
-	width:100em;
+  width:100%;
 	background-color:inherit;
+}
+@media screen and (min-width: 1000px) {
+  #main {
+	  width: 100em;
+  }
+  #body {
+    display: flex;
+  }
+  #body {
+	  width:62.5em;
+  }
+  #content {
+    padding: 0.45em;
+	  border-style:solid;
+	  border-color:grey;
+	  width:44.2em;
+  }
+  #links {
+	  border-style:solid;
+	  border-color:grey;
+    float:right;
+	  width:17em;
+  }
+  #imagebar {
+	  width:98em;
+  }
+  #footer {
+	  width:100em;
+  }
 }
