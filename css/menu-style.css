@@ -1,4 +1,4 @@
-/*@import url(http://fonts.googleapis.com/css?family=Open+Sans);*/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 #cssmenu,
 #cssmenu ul,
 #cssmenu ul li,
@@ -247,7 +247,7 @@
   #cssmenu #menu-button {
     display: block;
     padding: 20px;
-    color: #000000;
+    color: #ffffff;
     cursor: pointer;
     font-size: 12px;
     text-transform: uppercase;
@@ -260,7 +260,7 @@
     display: block;
     width: 15px;
     height: 2px;
-    background: #000000;
+    background: #ffffff;
   }
   #cssmenu #menu-button::before {
     content: '';
@@ -270,8 +270,8 @@
     display: block;
     width: 15px;
     height: 3px;
-    border-top: 2px solid #000000;
-    border-bottom: 2px solid #000000;
+    border-top: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
   }
   #cssmenu .submenu-button {
     position: absolute;
@@ -292,7 +292,7 @@
     display: block;
     width: 1px;
     height: 11px;
-    background: #000000;
+    background: #ffffff;
     z-index: 99;
   }
   #cssmenu .submenu-button::before {
@@ -303,7 +303,7 @@
     display: block;
     width: 11px;
     height: 1px;
-    background: #000000;
+    background: #ffffff;
     z-index: 99;
   }
   #cssmenu .submenu-button.submenu-opened:after {
