@@ -17,6 +17,10 @@ body
   background: linear-gradient(to bottom,  #febf04 21%,#000000 61%, #febf04 100%); /* W3C */
 /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#febf04', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
 }
+.interior, .exterior, .industrial, .contact, .index {
+	width:100%;
+	height:100%;
+}
 #imagebar
 {
 	position:relative;
@@ -68,7 +72,9 @@ body
 }
 #content
 {
-  width:100%;
+  width:96%;
+  padding-left:2%;
+  padding-right:2%;
 	text-align:center;
 	background-color:inherit;
 	z-index:3;
@@ -103,10 +109,10 @@ body
 #footer
 {
 	clear:both;
-  width:100%;
+  	width:100%;
 	background-color:inherit;
 }
-@media screen and (min-width: 1000px) {
+@media only all and (min-width: 1000px) {
   #main {
 	  width: 100em;
   }
@@ -117,7 +123,7 @@ body
 	  width:62.5em;
   }
   #content {
-    padding: 0.45em;
+    	padding: 0.45em;
 	  border-style:solid;
 	  border-color:grey;
 	  width:44.2em;
