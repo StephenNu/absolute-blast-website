@@ -45,7 +45,7 @@ body
 	background:black;
 	text-align:center;
 	z-index:1;
-  padding-bottom:30px;
+  padding-bottom:2.2em;
   color:white;
   font-size:10px;
 }
@@ -71,7 +71,7 @@ body
 {
 	border-style:solid;
 	border-color:grey;
-	padding:5px;
+	padding:0.45em;
 	float:left;
 	width:44.2em;
 	text-align:center;
@@ -80,7 +80,7 @@ body
 }
 #links
 {
-	padding-bottom:10px;
+	padding-bottom:1em;
 	border-style:solid;
 	border-color:grey;
 	float:right;

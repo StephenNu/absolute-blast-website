@@ -2,8 +2,8 @@
 {
   left:50%;
   margin: 0 auto;
-  width:400px;
-  height:289px;
+  width:20em;
+  height:14.45em;
   background:#191919;
   overflow:hidden;
 }
@@ -12,8 +12,8 @@
   position:relative;
   top:0px;
   left:0px;
-  width:400px;
-  height:289px;
+  width:20em;
+  height:14.45em;
   background:#191919;
   overflow:hidden;
 }
@@ -58,8 +58,8 @@ slides, arrows, and thumbnail containers
   position: absolute;
   left: 0px;
   top: 0px;
-  width: 400px;
-  height: 239px;
+  width: 20em;
+  height: 11.95em;
   overflow: hidden;
 }
 
@@ -84,17 +84,17 @@ slides, arrows, and thumbnail containers
 }
 .jssora05l, .jssora05ldn { 
   background-position: -10px -40px;
-  width: 40px;
-  height: 40px;
-  top: 115px;
-  left: 8px;
+  width: 3em;
+  height: 3em;
+  top: 5.75em;
+  left: 0.4em;
 }
 .jssora05r, .jssora05rdn { 
   background-position: -70px -40px;
-  width: 40px;
-  height: 40px;
-  top: 115px;
-  right: 8px;
+  width: 3em;
+  height: 3em;
+  top: 5.75em;
+  right: 0.4em;
 }
 .jssora05l:hover { background-position: -130px -40px; }
 .jssora05r:hover { background-position: -190px -40px; }
@@ -113,8 +113,8 @@ slides, arrows, and thumbnail containers
 
 .jssort01 {
   position: absolute;
-  width: 400px;
-  height: 50px;
+  width: 20em;
+  height: 2.5em;
   left:0px;
   bottom: 0px;
 }
@@ -126,8 +126,8 @@ slides, arrows, and thumbnail containers
 
 .jssort01 .p {
   position: absolute;
-  width: 32px;
-  height: 32px;
+  width: 1.6em;
+  height: 1.6em;
   top: 0px;
   left: 0px;
 }
@@ -151,24 +151,24 @@ slides, arrows, and thumbnail containers
   position: absolute;
   top: 0px;
   left: 0px;
-  width: 28px;
-  height: 28px;
+  width: 1.4em;
+  height: 1.4em;
   border: #000 2px solid;
 }
 
 .jssort01 .p:hover .c, .jssort01 .pav:hover .c, .jssort01 .pav .c {
   background: url(../../img/t01.png) center center;
   border-width: 0px;
-  top: 2px;
-  left: 2px;
-  width: 28px;
-  height: 28px;
+  top: 0.1em;
+  left: 0.1em;
+  width: 1.4em;
+  height: 1.4em;
 }
 
 .jssort01 .p:hover .c, .jssort01 .pav:hover .c {
   top: 0px;
   left: 0px;
-  width: 30px;
-  height: 30px;
+  width: 1.5em;
+  height: 1.5em;
   border: #fff 1px solid;
 }
