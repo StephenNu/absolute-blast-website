@@ -80,6 +80,11 @@ $(document).ready(function() {
     $("#imagebar img.industrial").toggleClass("transparent");
     $("#imagebar img.exterior").toggleClass("transparent");
   });
+  
+  $("#navigation a.exterior").on("click", function() {
+    $("#body #content").load("exteriors/index.html #exteriors");
+    slider_starter('slider1_container');
+  });
 });
 $(window).load(function() {
   $("#imagebar img.exterior").css("display", "initial");
@@ -93,7 +98,7 @@ $(window).load(function() {
         <div id='cssmenu'>
           <ul>
             <li><a href='#' class="index">Home</a></li>
-            <li class='has-sub'><a href='exteriors.html' class='exterior'>Exteriors</a>
+            <li class='has-sub'><a class='exterior'>Exteriors</a>
               <ul>
                 <li><a href='historic-restoration.html' class='exterior'>Historic Restoration</a></li>
                 <li><a href='exterior-cleaning-and-power-washing.html' class='exterior'>Exterior Clearning</a></li>

@@ -1,5 +1,5 @@
-jQuery(document).ready(function ($) {
-
+var jssor_slider1;
+slider_starter = function(container) {
   var _SlideshowTransitions = [
     //Fade in L
   {$Duration: 1200, x: 0.3, $During: { $Left: [0.3, 0.7] }, $Easing: { $Left: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 }
@@ -84,8 +84,10 @@ jQuery(document).ready(function ($) {
             $ParkingPosition: 360                          //[Optional] The offset position to park thumbnail
           }
   };
-
-  var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+  jssor_slider1 = new $JssorSlider$(container, options);
+};
+jQuery(document).ready(function ($) {
+  slider_starter('slider1_container');
   //responsive code begin
   //you can remove responsive code if you don't want the slider scales while window resizes
   function ScaleSlider() {

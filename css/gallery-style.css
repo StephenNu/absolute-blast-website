@@ -79,7 +79,7 @@ slides, arrows, and thumbnail containers
   position: absolute;
   cursor: pointer;
   display: block;
-  background: url(../../img/a17.png) no-repeat;
+  background: url(../images/a17.png) no-repeat;
   overflow:hidden;
 }
 .jssora05l, .jssora05ldn { 
@@ -157,7 +157,7 @@ slides, arrows, and thumbnail containers
 }
 
 .jssort01 .p:hover .c, .jssort01 .pav:hover .c, .jssort01 .pav .c {
-  background: url(../../img/t01.png) center center;
+  background: url(../images/t01.png) center center;
   border-width: 0px;
   top: 0.1em;
   left: 0.1em;
