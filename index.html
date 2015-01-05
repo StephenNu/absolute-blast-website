@@ -10,9 +10,10 @@
 
 
     <title>Absolute Blast SandBlasting</title>
-    <link rel="stylesheet" href="css/menu-style.css">
+    <link rel="stylesheet" href="css/combined-files.min.css">
+<!--    <link rel="stylesheet" href="css/menu-style.css">
     <link rel="stylesheet" type="text/css" href="css/gallery-style.css">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">-->
     <link rel="shortcut icon" href="/images/favicon.png" />
     <script>document.cookie='resolution='+Math.max(screen.width,screen.height)+'; path=/';</script>
     <script async type="text/javascript" src="js/combined-files.min.js"></script>
@@ -36,6 +37,7 @@
       var t, js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
         js = d.createElement(s); js.id = id;
+          js.async = true;
           js.src= "https://platform.twitter.com/widgets.js";
             fjs.parentNode.insertBefore(js, fjs);
               return window.twttr || (t = { _e: [], ready: function (f) { t._e.push(f) } });
