@@ -24,12 +24,13 @@ h2 {
 	text-decoration:none;
 }
 .index {
-
+	cursor: pointer;
 	position:relative;
 	width:100%;
 	height:100%;
 }
 .interior, .exterior, .industrial, .contact {
+	cursor: pointer;
 	display: none;
 	position:absolute;
 	width:100%;

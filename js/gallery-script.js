@@ -84,6 +84,7 @@ slider_starter = function(container) {
             $ParkingPosition: 360                          //[Optional] The offset position to park thumbnail
           }
   };
+  jssor_slider1 = null;
   jssor_slider1 = new $JssorSlider$(container, options);
 };
 jQuery(document).ready(function ($) {

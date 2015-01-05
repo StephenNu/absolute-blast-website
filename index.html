@@ -10,19 +10,19 @@
 
 
     <title>Absolute Blast SandBlasting</title>
-    <script type="text/javascript" src="js/index.js"></script>
     <link rel="stylesheet" href="css/menu-style.css">
     <link rel="stylesheet" type="text/css" href="css/gallery-style.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="shortcut icon" href="images/favicon.png" />
+    <link rel="shortcut icon" href="/images/favicon.png" />
     <script>document.cookie='resolution='+Math.max(screen.width,screen.height)+'; path=/';</script>
     <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/detectmobilebrowser.js"></script>
     <script type="text/javascript" src="js/menu-script.js"></script>
-    <script type="text/javascript" src="js/jssor.slider.min.js"></script>
+    <script type="text/javascript" src="js/jssor.slider.mini.js"></script>
     <script type="text/javascript" src="js/gallery-script.js"></script>
   </head>
-  <body>
+  <body id="webpage">
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -43,13 +43,54 @@
       }(document, "script", "twitter-wjs"));
     </script>
     <script>
+(function($) {
+    $.QueryString = (function(a) {
+        if (a == "") return {};
+        var b = {};
+        for (var i = 0; i < a.length; ++i)
+        {
+            var p=a[i].split('=');
+            if (p.length != 2) continue;
+            b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+        }
+        return b;
+    })(window.location.search.substr(1).split('&'))
+})(jQuery);
+function save_state(file, title, address) {
+    history.pushState({loc: file}, title, address);
+}
+function replace_state(options) {
+console.log("replacing");
+    history.replaceState({loc: options.loc}, options.title, options.address);
+}
+function change_content(content_html, options) {
+    $("#slider1_container").remove();
+	console.log("location: " + window.location.href + " also content: " + content_html);
+    $("#body #content").load(content_html, function() {
+      if ($("#slider1_container").length) {
+        slider_starter("slider1_container");
+      }
+      $("#menu-button.menu-opened").toggleClass("menu-opened");
+      $(".open").css("display", "none");
+      $(".open").toggleClass("open");
+      if (options.save) {
+        save_state(content_html, options.title, options.address);
+      } else if (options.replace) {
+        replace_state(options);
+      } 
+    });
+}
 if (!jQuery.browser.mobile) {
   jQuery('body').on('click', 'a[href^="tel:"]', function() {
     jQuery(this).attr('href', jQuery(this).attr('href').replace(/^tel:/, 'callto:'));
   });
 }
 $(document).ready(function() {
-  
+  var parameter_loc = $.QueryString["loc"];
+console.log(parameter_loc);
+  if (parameter_loc !== undefined) {
+	change_content(parameter_loc, {save: false, title: "", address: "?loc=" + parameter_loc, replace: false});
+  }
   $("#navigation a.index").hover(function() {
     $("#imagebar img.exterior").toggleClass("transparent");
     $("#imagebar img.interior").toggleClass("transparent");
@@ -80,52 +121,86 @@ $(document).ready(function() {
     $("#imagebar img.industrial").toggleClass("transparent");
     $("#imagebar img.exterior").toggleClass("transparent");
   });
-  
-  $("#navigation a.exterior").on("click", function() {
-    $("#body #content").load("exteriors/index.html #exteriors");
-    slider_starter('slider1_container');
+  var locations = {
+	"index" : "/index_c.html",
+
+	"exterior" : "/exteriors/exterior.html",
+	"historic" : "/exteriors/historic-restoration.html",
+	"cleaning" : "/exteriors/cleaning.html",
+
+	"interior" : "/interiors/interior.html",
+	"controlled" : "/interiors/controlled-blasting.html",
+	"confined" : "/interiors/confined-spaces.html",
+	
+	"industrial" : "/industrial/industrial.html",
+	"equipment" : "/industrial/heavy-equipment.html",
+	"marine" : "/industrial/marine.html",
+
+	"contact" : "/contact.html"
+  }
+  $("#navigation a").each(function() {
+    $(this).on("click", function() {
+      var _id = $(this).attr("id");
+      change_content(locations[_id], {save: true, title: _id, address: "?loc="+locations[_id]});
+      return false;
+    });
   });
-});
+  });
 $(window).load(function() {
   $("#imagebar img.exterior").css("display", "initial");
   $("#imagebar img.interior").css("display", "initial");
   $("#imagebar img.industrial").css("display", "initial");
   $("#imagebar img.contact").css("display", "initial");
 });
+window.onpopstate = function(event) {
+  
+    $("#slider1_container").remove();
+    console.log("content1: " + JSON.stringify(event.state));
+    if (JSON.stringify(event.state) == "null") {
+	var _loc = $.QueryString['loc'];
+	if (_loc !== undefined) {
+	  change_content(_loc, {save: false});
+	} else {
+	  change_content("index_c.html", {save: false});
+  	}
+    } else {
+        change_content(event.state.loc, {save: false});
+    }
+};
     </script>
     <div id="main">
       <div id="navigation">
         <div id='cssmenu'>
           <ul>
-            <li><a href='#' class="index">Home</a></li>
-            <li class='has-sub'><a class='exterior'>Exteriors</a>
+            <li><a id="index" href='?loc=index_c.html' class="index">Home</a></li>
+            <li class='has-sub'><a id="exterior" href="?loc=exteriors/exterior.html" class='exterior'>Exteriors</a>
               <ul>
-                <li><a href='historic-restoration.html' class='exterior'>Historic Restoration</a></li>
-                <li><a href='exterior-cleaning-and-power-washing.html' class='exterior'>Exterior Clearning</a></li>
+                <li><a id="historic" href='?loc=exteriors/historic-restoration.html' class='exterior'>Historic Restoration</a></li>
+                <li><a id="cleaning" href='?loc=exteriors/cleaning.html' class='exterior'>Exterior Clearning</a></li>
               </ul>
             </li>
-            <li class='has-sub'><a href='interiors.html' class='interior'>Interiors</a>
+            <li class='has-sub'><a id="interior" href='?loc=interiors/interiors.html' class='interior'>Interiors</a>
               <ul>
-                <li><a href='controlled-interior-blasting.html' class='interior'>Controlled Blasting</a></li>
-                <li><a href='confined-spaces.html' class='interior'>Confined Spaces</a></li>
+                <li><a id="controlled" href='?loc=interiors/controlled-blasting.html' class='interior'>Controlled Blasting</a></li>
+                <li><a id="confined" href='?loc=interiors/confined-spaces.html' class='interior'>Confined Spaces</a></li>
               </ul>
             </li>
-            <li class='has-sub'><a href='industrial.html' class="industrial">Industrial</a>
+            <li class='has-sub'><a id="industrial" href='?loc=industrial/industrial.html' class="industrial">Industrial</a>
               <ul>
-                <li><a href='heavy-equipment.html' class="industrial">Heavy Equipment</a></li>
-                <li><a href='marine-and-riparian.html' class="industrial">Marine and Riparian</a></li>
+                <li><a id="equipment" href='?loc=industrial/heavy-equipment.html' class="industrial">Heavy Equipment</a></li>
+                <li><a id="marine" href='?loc=industrial/marine.html' class="industrial">Marine and Riparian</a></li>
               </ul>
             </li>
-            <li><a href='contact.html' class="contact">Contact</a></li>
+            <li><a id="contact" href='?loc=contact.html' class="contact">Contact</a></li>
           </ul>
         </div>
 
         <div id="imagebar">
-          <img class="exterior" src="images/exteriors.jpg"  alt="latest sandblasting jobs" />
-          <img class="interior" src="images/interiors.jpg"  alt="restoration of buildings" />
-          <img class="industrial" src="images/heavy-equipment.jpg"  alt="graffiti removal" />
-          <img class="contact" src="images/contact.jpg"  alt="contact us" />
-          <img class="index" src="images/home.jpg"  alt="return to homepage" />
+          <img class="exterior" src="/images/exteriors.jpg"  alt="latest sandblasting jobs" />
+          <img class="interior" src="/images/interiors.jpg"  alt="restoration of buildings" />
+          <img class="industrial" src="/images/heavy-equipment.jpg"  alt="graffiti removal" />
+          <img class="contact" src="/images/contact.jpg"  alt="contact us" />
+          <img class="index" src="/images/home.jpg"  alt="return to homepage" />
         </div>
       </div>
       <div id="body">
@@ -160,28 +235,28 @@ $(window).load(function() {
             <!-- Slides Container -->
             <div u="slides" class="slide-container" >
               <div>
-                <img alt="On the jobsite gallery" u="image" src="images/101a.jpg" />
-                <img alt="On the jobsite gallery" u="thumb" src="images/101a.jpg" />
+                <img alt="On the jobsite gallery" u="image" src="/images/101a.jpg" />
+                <img alt="On the jobsite gallery" u="thumb" src="/images/101a.jpg" />
               </div>
               <div>
-                <img alt="On the jobsite gallery" u="image" src="images/102a.jpg" />
-                <img alt="On the jobsite gallery" u="thumb" src="images/102a.jpg" />
+                <img alt="On the jobsite gallery" u="image" src="/images/102a.jpg" />
+                <img alt="On the jobsite gallery" u="thumb" src="/images/102a.jpg" />
               </div>
               <div>
-                <img alt="On the jobsite gallery" u="image" src="images/103a.jpg" />
-                <img alt="On the jobsite gallery" u="thumb" src="images/103a.jpg" />
+                <img alt="On the jobsite gallery" u="image" src="/images/103a.jpg" />
+                <img alt="On the jobsite gallery" u="thumb" src="/images/103a.jpg" />
               </div>
               <div>
-                <img alt="On the jobsite gallery" u="image" src="images/104a.jpg" />
-                <img alt="On the jobsite gallery" u="thumb" src="images/104a.jpg" />
+                <img alt="On the jobsite gallery" u="image" src="/images/104a.jpg" />
+                <img alt="On the jobsite gallery" u="thumb" src="/images/104a.jpg" />
               </div>
               <div>
-                <img alt="On the jobsite gallery" u="image" src="images/108a.jpg" />
-                <img alt="On the jobsite gallery" u="thumb" src="images/108a.jpg" />
+                <img alt="On the jobsite gallery" u="image" src="/images/108a.jpg" />
+                <img alt="On the jobsite gallery" u="thumb" src="/images/108a.jpg" />
               </div>
               <div>
-                <img alt="On the jobsite gallery" u="image" src="images/109a.jpg" />
-                <img alt="On the jobsite gallery" u="thumb" src="images/109a.jpg" />
+                <img alt="On the jobsite gallery" u="image" src="/images/109a.jpg" />
+                <img alt="On the jobsite gallery" u="thumb" src="/images/109a.jpg" />
               </div>
             </div>
             <!-- Arrow Left -->
@@ -264,7 +339,7 @@ $(window).load(function() {
           </div>
           <div id="partners">
             <h3>Partners</h3>
-            <a href="http://hfrg.ca/"><img src="images/hfrg-patch.png" width="150" height="150" alt="link to heritage facade restoration guild" /></a>
+            <a href="http://hfrg.ca/"><img src="/images/hfrg-patch.png" width="150" height="150" alt="link to heritage facade restoration guild" /></a>
           </div>
 
         </div>
