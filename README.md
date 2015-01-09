@@ -9,3 +9,4 @@ This repository contains the code from the following sources, alongside my own.
 - Jssor slider licensed under a MIT-license. Homepage: http://www.jssor.com/
 - css menu maker, no license was listed. Homepage: http://cssmenumaker.com/
 - FoxyForm, no license was listed. Homepage: http://foxyform.com/
+- em to pixels, under a MIT-license. Homepage: https://github.com/filamentgroup/jQuery-Pixel-Em-Converter
