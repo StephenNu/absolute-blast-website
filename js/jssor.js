@@ -1,4 +1,4 @@
-﻿/*
+/*
 * Jssor 18.0
 * http://www.jssor.com/
 *
@@ -874,12 +874,22 @@ var $Jssor$ = window.$Jssor$ = new function () {
         ///		the value to set
         ///	</param>
         if (value != undefined) {
+
             elmt.style[name] = value;
         }
         else {
             var style = elmt.currentStyle || elmt.style;
             value = style[name];
+		// !!! part of Internet explorer fix to stop the internal container from exploding using a 1-to-1
+		// ratio of em to px.
+		if (typeof(value) == "string" && value[value.length-2] == 'e'){
 
+			var temp = $(ParseFloat(value)).toPx();
+			if (temp[0] != "N") {
+				value = temp;
+			}
+		}
+	    // !!! End of Internet Explorer Fix
             if (value == "" && window.getComputedStyle) {
                 style = elmt.ownerDocument.defaultView.getComputedStyle(elmt, null);
 
@@ -906,10 +916,18 @@ var $Jssor$ = window.$Jssor$ = new function () {
         ///		the value to set
         ///	</param>
         if (value != undefined) {
+
+		// !!! part of Internet explorer fix to stop the internal container from exploding using a 1-to-1
+		// ratio of em to px.
+	if (typeof(Css(elmt, name)) == "string" && Css(elmt, name).indexOf("em") != -1) {
+            isDimensional && (value += "em");
+            Css(elmt, name, value);
+// !!! End of Internet Explorer fix
+	} else {
             isDimensional && (value += "px");
             Css(elmt, name, value);
         }
-        else {
+        } else {
             return ParseFloat(Css(elmt, name));
         }
     }
@@ -1040,6 +1058,11 @@ var $Jssor$ = window.$Jssor$ = new function () {
 
             if (transformProperty) {
                 //rotate(15deg) scale(.5)
+                
+		// !!! part of Internet explorer fix to stop the internal container from exploding using a 1-to-1
+		// ratio of em to px.
+		scale = 1;
+		// !!! End of Internet Explorer fix !!!
                 var transformValue = "scale(" + scale + ")";
 
                 var oldTransformValue = elmt.style[transformProperty];
@@ -1110,10 +1133,10 @@ var $Jssor$ = window.$Jssor$ = new function () {
     //};
 
     _This.$WindowResizeFilter = function (window, handler) {
+
         return IsBrowserIe9Earlier() ? function () {
 
             var trigger = true;
-
             var checkElement = (IsBrowserIeQuirks() ? window.document.body : window.document.documentElement);
             if (checkElement) {
                 //check vertical bar
