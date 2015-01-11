@@ -88,7 +88,7 @@ slider_starter = function(container) {
   jssor_slider1 = new $JssorSlider$(container, options);
 };
 jQuery(document).ready(function ($) {
-  slider_starter('slider1_container');
+  
   //responsive code begin
   //you can remove responsive code if you don't want the slider scales while window resizes
   function ScaleSlider() {
@@ -98,11 +98,15 @@ jQuery(document).ready(function ($) {
     else
       window.setTimeout(ScaleSlider, 30);
   }
-  ScaleSlider();
 
   $(window).bind("load", ScaleSlider);
   $(window).bind("resize", ScaleSlider);
   $(window).bind("orientationchange", ScaleSlider);
   //responsive code end
+  var parameter_loc = $.QueryString["loc"];
+  if (parameter_loc === undefined) {
+    slider_starter('slider1_container');
+    ScaleSlider();
+  }
 });
 

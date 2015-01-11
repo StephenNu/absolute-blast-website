@@ -1414,7 +1414,7 @@ var $Jssor$ = window.$Jssor$ = new function () {
     };
 
     function FindChild(elmt, attrValue, noDeep, attrName) {
-        attrName = attrName || "u";
+        attrName = attrName || "data-u";
 
         for (elmt = elmt ? elmt.firstChild : null; elmt; elmt = elmt.nextSibling) {
             if (elmt.nodeType == 1) {
@@ -1433,7 +1433,7 @@ var $Jssor$ = window.$Jssor$ = new function () {
     _This.$FindChild = FindChild;
 
     function FindChildren(elmt, attrValue, noDeep, attrName) {
-        attrName = attrName || "u";
+        attrName = attrName || "data-u";
 
         var ret = [];
 

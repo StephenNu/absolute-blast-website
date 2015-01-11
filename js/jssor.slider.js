@@ -1615,7 +1615,7 @@ new function () {
 
                 $Jssor$.$Each(childElements, function (childElement, i) {
 
-                    var uAttribute = $Jssor$.$AttributeEx(childElement, "u");
+                    var uAttribute = $Jssor$.$AttributeEx(childElement, "data-u");
                     if (uAttribute == "player" && !_PlayerInstanceElement) {
                         _PlayerInstanceElement = childElement;
                         if (_PlayerInstanceElement.pInstance) {
@@ -1636,7 +1636,7 @@ new function () {
                             fresh = true;
                         }
                     }
-                    else if (!_ContentRefreshed && !level && !_ImageItem && $Jssor$.$AttributeEx(childElement, "u") == "image") {
+                    else if (!_ContentRefreshed && !level && !_ImageItem && $Jssor$.$AttributeEx(childElement, "data-u") == "image") {
                         _ImageItem = childElement;
 
                         if (_ImageItem) {
@@ -2595,7 +2595,7 @@ new function () {
                 };
 
                 $Jssor$.$Each(children, function (child) {
-                    $Jssor$.$AppendChild(noMoveElmts[$Jssor$.$AttributeEx(child, "u")] ? elmt : innerWrapper, child);
+                    $Jssor$.$AppendChild(noMoveElmts[$Jssor$.$AttributeEx(child, "data-u")] ? elmt : innerWrapper, child);
                 });
 
                 $Jssor$.$ShowElement(innerWrapper);
@@ -2855,7 +2855,7 @@ new function () {
         {
             var slideElmts = $Jssor$.$Children(_SlidesContainer);
             $Jssor$.$Each(slideElmts, function (slideElmt) {
-                if (slideElmt.tagName == "DIV" && !$Jssor$.$AttributeEx(slideElmt, "u")) {
+                if (slideElmt.tagName == "DIV" && !$Jssor$.$AttributeEx(slideElmt, "data-u")) {
                     _SlideElmts.push(slideElmt);
                 }
             });
@@ -3829,7 +3829,7 @@ var $JssorCaptionSlider$ = window.$JssorCaptionSlider$ = function (container, ca
 
             var transitionsWithTuning = [];
             transitionsWithTuning.$Elmt = captionElmt;
-            var isCaption = $Jssor$.$AttributeEx(captionElmt, "u") == "caption";
+            var isCaption = $Jssor$.$AttributeEx(captionElmt, "data-u") == "caption";
 
             $Jssor$.$Each(playIn ? [0, 3] : [2], function (j, k) {
 
