@@ -10,3 +10,4 @@ This repository contains the code from the following sources, alongside my own.
 - css menu maker, no license was listed. Homepage: http://cssmenumaker.com/
 - FoxyForm, no license was listed. Homepage: http://foxyform.com/
 - em to pixels, under a MIT-license. Homepage: https://github.com/filamentgroup/jQuery-Pixel-Em-Converter
+- LoadCSS, under a MIT-license. Homepage: https://github.com/filamentgroup/loadCSS

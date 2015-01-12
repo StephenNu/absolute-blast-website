@@ -1,8 +1,7 @@
 html {
 	height: 100%;
 }
-body
-{
+body {
   font-family: 'Open Sans', sans-serif;
   height: 100%;
   margin: 0;
@@ -36,14 +35,12 @@ h1 {
 	width:100%;
 	height:96%;
 }
-#imagebar
-{
+#imagebar {
 	margin: 0 auto;
 	position:relative;
   	width:100%;
 }
-#imagebar img
-{
+#imagebar img {
 	width:100%;
 	left:0;
 	-webkit-transition: opacity 1s ease-in-out;
@@ -56,8 +53,7 @@ h1 {
 	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 	/*filter: alpha(Opacity=0);*/
 }
-#main
-{
+#main {
 	margin:auto;
   width:100%;
 	background:black;
@@ -67,9 +63,7 @@ h1 {
   color:white;
   font-size:10px;
 }
-
-#body
-{
+#body {
   color:black;
   font-size:16px;
 	margin:auto;
@@ -77,14 +71,12 @@ h1 {
 	background:white;
   width:100%;
 }
-#body a
-{
+#body a {
 	text-decoration:underline;
 	border-style:none;
 	background-color:inherit;
 }
-#content
-{
+#content {
   width:96%;
   padding-left:2%;
   padding-right:2%;
@@ -92,35 +84,29 @@ h1 {
 	background-color:inherit;
 	z-index:3;
 }
-#links
-{
+#links {
 	padding-bottom:1em;
   width:100%;
 	text-align:center;
 	background-color:inherit;
 	z-index:3;
 }
-#links h3
-{
+#links h3 {
 	background-color:grey;
 }
-#links b
-{
+#links b {
 	font-size:larger;
 }
-#links a
-{
+#links a {
 	color:blue;
 	text-decoration:underline;
 	border-style:none;
 	background:none;
 }
-#links a:hover
-{
+#links a:hover {
 	color:purple;
 }
-#footer
-{
+#footer {
 	clear:both;
   	width:100%;
 	background-color:inherit;
@@ -134,8 +120,7 @@ h1 {
 .telephone {
 	text-align:right;
 }
-@media only all and (min-width: 1000px) 
-{
+@media only all and (min-width: 1000px)  {
   #main {
 	  width: 100em;
   }
