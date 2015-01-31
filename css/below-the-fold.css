@@ -19,6 +19,10 @@ h1 {
   	width:100%;
 	background-color:inherit;
 }
+#footer a:link, #footer a:visited {
+	text-decoration:none;
+	color:white;
+}
 .jssora05l:hover { background-position: -130px -40px; }
 .jssora05r:hover { background-position: -190px -40px; }
 .jssora05ldn { background-position: -250px -40px; }
@@ -188,4 +192,21 @@ only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
   #cssmenu ul ul li.has-sub > a::after {
     display: none;
   }
+}
+@media print {
+#cssmenu {
+display: none;
+}
+#imagebar img {
+display: none;
+}
+#imagebar .index {
+display: block;
+}
+.outer_container {
+display: none;
+}
+#social {
+display: none;
+}
 }

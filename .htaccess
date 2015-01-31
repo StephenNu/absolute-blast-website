@@ -14,7 +14,14 @@
   # to adaptive-images.php so we can select appropriately sized versions
   RewriteRule \.(?:jpe?g|gif|png)$ adaptive-images.php
 
-  # END Adaptive-Images -------------------------------------------------------------------------------
+
+  # END Adaptive-Images ------------------------------------------------------------------------------- 
+  RewriteCond %{HTTP_HOST} ^(?:www\.)?absoluteblast\.org(/.*)?$
+  RewriteRule (.*) http://absoluteblast.ca/$1 [R=301,L]
+  RewriteCond %{HTTP_HOST} ^(?:www\.)?absoluteblast\.net(/.*)?$
+  RewriteRule (.*) http://absoluteblast.ca/$1 [R=301,L]
+  RewriteCond %{HTTP_HOST} ^www\.absoluteblast\.ca(/.*)?$
+  RewriteRule (.*) http://absoluteblast.ca/$1 [R=301,L]
 </IfModule>
 <IfModule pagespeed_module>
   ModPagespeed on
@@ -110,3 +117,4 @@ AddType audio/x-wav .wav
 
 # Bittorrent
 AddType application/x-bittorrent .torrent
+
