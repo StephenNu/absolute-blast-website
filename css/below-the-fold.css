@@ -31,7 +31,7 @@ h1 {
   cursor: move;
 }
 .jssort01 .p:hover .c, .jssort01 .pav:hover .c, .jssort01 .pav .c {
-  background: url(../images/t01.png) center center;
+  background: url(/images/misc/crosshairs.png) center center;
   border-width: 0px;
   top: 0.1em;
   left: 0.1em;

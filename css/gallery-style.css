@@ -37,7 +37,7 @@ inner elements
 .loading-internal-2 {
   position: absolute;
   display: block;
-  background: url(../images/loading.gif) no-repeat center center;
+  background: url(../images/misc/loading.gif) no-repeat center center;
   top: 0px;
   left: 0px;
   width: 100%;
@@ -69,7 +69,7 @@ slides, arrows, and thumbnail containers
   position: absolute;
   cursor: pointer;
   display: block;
-  background: url(../images/a17.png) no-repeat;
+  background: url(../images/misc/movement-arrows.png) no-repeat;
   overflow:hidden;
 }
 .jssora05l, .jssora05ldn { 
@@ -140,7 +140,7 @@ slides, arrows, and thumbnail containers
   border: #000 2px solid;
 }
 .jssort01 .p:hover .c, .jssort01 .pav:hover .c, .jssort01 .pav .c {
-  background: url(../images/t01.png) center center;
+  background: url(../images/misc/crosshairs.png) center center;
   border-width: 0px;
   top: 0.1em;
   left: 0.1em;

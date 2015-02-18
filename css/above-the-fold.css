@@ -144,7 +144,7 @@ tr > td{
 {
   position: absolute;
   display: block;
-  background: url(/images/loading.gif) no-repeat center center;
+  background: url(/images/misc/loading.gif) no-repeat center center;
   top: 0px;
   left: 0px;
   width: 100%;
@@ -169,7 +169,7 @@ tr > td{
   position: absolute;
   cursor: pointer;
   display: block;
-  background: url(/images/a17.png) no-repeat;
+  background: url(/images/misc/movement-arrows.png) no-repeat;
   overflow:hidden;
 }
 .jssora05l, .jssora05ldn { 
@@ -287,7 +287,7 @@ tr > td{
   -o-transition: color .2s ease;
   transition: color .2s ease;
 }
-@media all and (max-width: 768px), 
+@media all and (max-width: 1024px), 
 only screen and (min-resolution: 192dpi) and (max-width: 1024px),
 only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
   #cssmenu {
