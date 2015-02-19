@@ -31,14 +31,15 @@ FileETag None
 Header unset ETag
 Options +FollowSymlinks
 RedirectMatch 404 /\.git
+<filesMatch "\\.(html|xml)$">
 Header set Cache-Control "max-age=600"
+</filesMatch>
 <filesMatch "\\.(css|css.gz)$">
 Header set Cache-Control "max-age=604800"
 </filesMatch>
 <filesMatch "\\.(js|js.gz)$">
 Header set Cache-Control "max-age=604800"
 </filesMatch>
-
 # Content types.
 AddDefaultCharset UTF-8
 # CSS
